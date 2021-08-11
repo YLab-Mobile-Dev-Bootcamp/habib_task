@@ -1,6 +1,6 @@
 # habib_task2
 
-A new Flutter project.
+Aplikasi Animal Gallery
 
 ## Getting Started
 
