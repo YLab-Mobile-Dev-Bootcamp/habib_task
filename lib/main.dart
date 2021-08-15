@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Animal',
+                  'Anime',
                   style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.white,
@@ -98,10 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: MediaQuery.of(context).size.height - 300.0,
                     child: ListView(
                       children: [
-                        _buildAnimalItem('assets/a1.png', 'Beruang'),
-                        _buildAnimalItem('assets/a2.png', 'Rusa'),
-                        _buildAnimalItem('assets/a3.png', 'Gajah'),
-                        _buildAnimalItem('assets/a4.png', 'Panda'),
+                        _buildAnimalItem('assets/a1.png', 'Hunter X Hunter'),
+                        _buildAnimalItem('assets/a2.png', 'Jujutsu Kaisen'),
+                        _buildAnimalItem('assets/a3.png', 'My Hero Academia'),
+                        _buildAnimalItem('assets/a4.png', 'Attack On Titan'),
                       ],
                     ),
                   ),
@@ -145,7 +145,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
-              )
+              ),
+              IconButton(
+                  icon: Icon(Icons.add), color: Colors.black, onPressed: () {})
             ],
           ),
         ));
