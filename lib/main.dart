@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habib_task2/detailPage.dart';
 import './bloc/counter.dart';
 
 void main() {
@@ -101,10 +102,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: MediaQuery.of(context).size.height - 300.0,
                     child: ListView(
                       children: [
-                        _buildAnimalItem('assets/a1.png', 'Hunter X Hunter'),
-                        _buildAnimalItem('assets/a2.png', 'Jujutsu Kaisen'),
-                        _buildAnimalItem('assets/a3.png', 'My Hero Academia'),
-                        _buildAnimalItem('assets/a4.png', 'Attack On Titan'),
+                        _buildAnimalItem('assets/a1.png', 'Hunter X Hunter',
+                            'Petualangan, fantasi'),
+                        _buildAnimalItem('assets/a2.png', 'Jujutsu Kaisen',
+                            'Petualangan, fantasi'),
+                        _buildAnimalItem('assets/a3.png', 'My Hero Academia',
+                            'Petualangan, superhero'),
+                        _buildAnimalItem('assets/a4.png', 'Attack On Titan',
+                            'Aksi, fantasi'),
                       ],
                     ),
                   ),
@@ -136,11 +141,18 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildAnimalItem(String imgPath, String name) {
+  Widget _buildAnimalItem(String imgPath, String name, String genre) {
     return Padding(
         padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => DetailPage(
+                      heroTag: imgPath,
+                      title: name,
+                      tipe: genre,
+                    )));
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -158,12 +170,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text(
-                      name,
-                      style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          name,
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(genre,
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 15.0,
+                                color: Colors.grey))
+                      ],
                     )
                   ],
                 ),
