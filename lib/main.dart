@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './bloc/counter.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,6 +19,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  CounterBloc bloc = CounterBloc();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 40.0,
           ),
           Container(
-            height: MediaQuery.of(context).size.height - 185.0,
+            height: MediaQuery.of(context).size.height - 210.0,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0)),
@@ -103,6 +106,25 @@ class _MyHomePageState extends State<MyHomePage> {
                         _buildAnimalItem('assets/a3.png', 'My Hero Academia'),
                         _buildAnimalItem('assets/a4.png', 'Attack On Titan'),
                       ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                StreamBuilder(
+                  stream: bloc.output,
+                  builder: (context, snapshot) => Text(
+                    "Anime favorite : ${snapshot.data}",
+                    style: TextStyle(
+                      fontSize: 25,
                     ),
                   ),
                 )
@@ -147,7 +169,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               IconButton(
-                  icon: Icon(Icons.add), color: Colors.black, onPressed: () {})
+                  icon: Icon(Icons.add),
+                  color: Colors.black,
+                  onPressed: () {
+                    bloc.tombol.add('add');
+                  })
             ],
           ),
         ));
