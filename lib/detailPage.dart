@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class DetailPage extends StatefulWidget {
   final heroTag;
   final title;
-  final tipe;
+  final score;
+  final desc;
 
-  DetailPage({this.heroTag, this.title, this.tipe});
+  DetailPage({this.heroTag, this.title, this.score, this.desc});
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -86,7 +87,7 @@ class _DetailPageState extends State<DetailPage> {
                             fontSize: 22.0,
                             fontWeight: FontWeight.bold)),
                     SizedBox(height: 10.0),
-                    Text(widget.tipe,
+                    Text(widget.score,
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             fontSize: 18.0,
@@ -94,14 +95,13 @@ class _DetailPageState extends State<DetailPage> {
                     SizedBox(
                       height: 30,
                     ),
-                    Text('Review',
+                    Text('Descriptions',
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             fontSize: 22.0,
                             fontWeight: FontWeight.bold)),
                     SizedBox(height: 10),
-                    Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae scelerisque neque. Donec tempor viverra imperdiet. Phasellus scelerisque porttitor purus at scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
+                    Text(widget.desc,
                         style: TextStyle(
                           fontFamily: 'Montserrat',
                           fontSize: 20.0,

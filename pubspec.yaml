@@ -1,4 +1,4 @@
-name: habib_task2
+name: habib_task
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -24,11 +24,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-  bloc: ^6.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  flutter_bloc: ^4.0.0
+  dio: ^3.0.10
 
 dev_dependencies:
   flutter_test:
