@@ -2,5 +2,5 @@
 
 Aplikasi Animal Gallery
 
-# Taks 2
-![Screenshot_1628693992](https://user-images.githubusercontent.com/69302455/129054946-30a1c8bd-1c9d-4ad3-9e7c-cd279eca8c27.png)
+# Taks 4
+![Screenshot_1629661540](https://user-images.githubusercontent.com/69302455/130368090-a4eb3d5b-a493-4145-8c99-f8e057c2daee.png)
